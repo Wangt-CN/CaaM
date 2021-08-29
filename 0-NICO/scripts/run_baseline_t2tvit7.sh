@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python train.py -cfg conf/baseline_t2tvit7_bf0.02.yaml -gpu -name baseline_t2tvit7

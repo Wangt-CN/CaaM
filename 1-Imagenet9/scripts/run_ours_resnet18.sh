@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0,1 python train.py --cfg conf/ours_resnet18_multi2_imagenet9_pw5e4_noenv_iter.yaml --gpu --multigpu --name ours_resnet18_multilayer2_imagenet9_pw5e4_noenv_iter

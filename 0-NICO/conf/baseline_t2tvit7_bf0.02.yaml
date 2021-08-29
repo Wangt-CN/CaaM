@@ -1,0 +1,35 @@
+exp_name: nico_resvit18_multi_unshuffle_bf0.02_lr0.01
+net: t2tvit7
+dataset: NICO
+image_folder: /data2/wangtan/causal-invariant-attention/dataset/NICO/multi_classification
+cxt_dic_path: /data2/wangtan/causal-invariant-attention/dataset/NICO/label_file/Context_name2label.json
+class_dic_path: /data2/wangtan/causal-invariant-attention/dataset/NICO/label_file/Animal_name2label.json
+training_opt:
+  seed: 0
+  batch_size: 128
+  optim:
+    sched: baseline
+  lr: 0.0005
+  warm: 2
+  epoch: 200
+  milestones: [80, 120, 160]
+  # milestones: [80, 140, 200]
+  save_epoch: 20
+  print_batch: 1
+  mean: [0.52418953, 0.5233741, 0.44896784]
+  std: [0.21851876, 0.2175944, 0.22552039]
+variance_opt:
+  balance_factor: 0.02
+  training_dist: {'dog': ['on_grass','in_water','in_cage','eating','on_beach','lying','running'],
+                  'cat': ['on_snow','at_home','in_street','walking','in_river','in_cage','eating'],
+                  'bear': ['in_forest','black','brown','eating_grass','in_water','lying','on_snow'],
+                  'bird': ['on_ground', 'in_hand','on_branch','flying','eating','on_grass','standing'],
+                  'cow': ['in_river', 'lying', 'standing','eating','in_forest','on_grass','on_snow'],
+                  'elephant': ['in_zoo', 'in_circus', 'in_forest', 'in_river','eating','standing','on_grass'],
+                  'horse': ['on_beach', 'aside_people', 'running','lying','on_grass','on_snow','in_forest'],
+                  'monkey': ['sitting', 'walking', 'in_water','on_snow','in_forest','eating','on_grass'],
+                  'rat': ['at_home', 'in_hole', 'in_cage','in_forest','in_water','on_grass','eating'],
+                  'sheep': ['eating', 'on_road','walking','on_snow','on_grass','lying','in_forest']}
+  mode: 'baseline'
+  env_type: 'baseline'
+resume: False

@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0,1 python train.py -cfg conf/ours_resnet18_multilayer4_bf0.02_noenv_pw5e5.yaml -gpu -name lti_ours_resnet18_multilayer4_bf0.02_noenv_pw5e5 -multigpu

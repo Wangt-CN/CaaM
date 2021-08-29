@@ -1,0 +1,47 @@
+exp_name: nico_resvit18_multi_unshuffle_bf0.02_lr0.01
+net: resnet18_ours_cbam_multi
+dataset: NICO
+image_folder: /data2/wangtan/causal-invariant-attention/dataset/NICO/multi_classification
+cxt_dic_path: /data2/wangtan/causal-invariant-attention/dataset/NICO/label_file/Context_name2label.json
+class_dic_path: /data2/wangtan/causal-invariant-attention/dataset/NICO/label_file/Animal_name2label.json
+training_opt:
+  seed: 0
+  classes: 10
+  batch_size: 32
+  lr: 0.05
+  warm: 2
+  epoch: 200
+  milestones: [80, 120, 160]
+  # milestones: [80, 140, 200]
+  save_epoch: 20
+  print_batch: 1
+  mean: [0.52418953, 0.5233741, 0.44896784]
+  std: [0.21851876, 0.2175944, 0.22552039]
+  mixup: True
+variance_opt:
+  balance_factor: 0.02
+  training_dist: {'dog': ['on_grass','in_water','in_cage','eating','on_beach','lying','running'],
+                  'cat': ['on_snow','at_home','in_street','walking','in_river','in_cage','eating'],
+                  'bear': ['in_forest','black','brown','eating_grass','in_water','lying','on_snow'],
+                  'bird': ['on_ground', 'in_hand','on_branch','flying','eating','on_grass','standing'],
+                  'cow': ['in_river', 'lying', 'standing','eating','in_forest','on_grass','on_snow'],
+                  'elephant': ['in_zoo', 'in_circus', 'in_forest', 'in_river','eating','standing','on_grass'],
+                  'horse': ['on_beach', 'aside_people', 'running','lying','on_grass','on_snow','in_forest'],
+                  'monkey': ['sitting', 'walking', 'in_water','on_snow','in_forest','eating','on_grass'],
+                  'rat': ['at_home', 'in_hole', 'in_cage','in_forest','in_water','on_grass','eating'],
+                  'sheep': ['eating', 'on_road','walking','on_snow','on_grass','lying','in_forest']}
+  env: True
+  mode: 'ours'
+  erm_flag: True
+  sp_flag: False
+  n_env: 4
+  env_type: 'auto-iter'
+  split_renew: 40
+  split_renew_iters: 20
+  from_scratch: False
+  ref_model_path: /data2/wangtan/causal-invariant-attention/multi-classification/nico/checkpoint/resnet18/multi_baseline_resnet18_bf0.02/resnet18-180-regular.pth
+  penalty_weight: 5e5
+  penalty_anneal_iters: 0
+  #2 blocks, 4 layers
+  split_layer: 2
+resume: False
