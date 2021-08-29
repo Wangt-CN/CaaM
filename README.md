@@ -1,10 +1,10 @@
-## CaaM
+# CaaM
 
 This repo contains the codes of training our [CaaM](https://arxiv.org/abs/2108.08782) on NICO/ImageNet9 dataset. Due to my recent limited bandwidth, this codebase is still messy, which will be further refined and checked recently.
 
 
 
-#### 0. Bibtex
+### 0. Bibtex
 
 If you find our codes helpful, please cite our paper:
 
@@ -19,7 +19,7 @@ If you find our codes helpful, please cite our paper:
 
 
 
-#### 1. Preparation
+### 1. Preparation
 
 1) Installation: Python3.6, Pytorch1.6, tensorboard, timm(0.3.4), scikit-learn, opencv-python, matplotlib, yaml
 2) Dataset: 
@@ -31,7 +31,7 @@ If you find our codes helpful, please cite our paper:
 
 
 
-#### 2. Evaluation:
+### 2. Evaluation:
 
 1) For ResNet18 on NICO dataset
 
@@ -55,7 +55,7 @@ Similarly, the pretrained model is in `pretrain_model`. Please note that on Imag
 
 
 
-#### 3. Train
+### 3. Train
 
 To perform training, please run the sh file in scripts. For example:
 
@@ -65,7 +65,7 @@ sh scripts/run_baseline_resnet18.sh
 
 
 
-#### **4. An interesting finding**
+### **4. An interesting finding**
 
 Recently I found an interesting thing by accident. The `mixup` added on the baseline model would not bring much performance improvements (see Table 1. in the main paper). However, when performing `mixup` based on our CaaM, the performance can be further boosted.
 
@@ -81,7 +81,7 @@ This can make our CaaM achieve about **50~51%** Val & Test accuracy on NICO data
 
 
 
-#### **Acknowledgement**
+### **Acknowledgement**
 
 Special thanks to the authors of [ReBias](https://github.com/clovaai/rebias) and [IRM](https://github.com/facebookresearch/InvariantRiskMinimization), and the datasets used in this research project.
 
