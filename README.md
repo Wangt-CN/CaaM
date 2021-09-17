@@ -24,7 +24,7 @@ If you find our codes helpful, please cite our paper:
 1) Installation: Python3.6, Pytorch1.6, tensorboard, timm(0.3.4), scikit-learn, opencv-python, matplotlib, yaml
 2) Dataset: 
 
-- NICO: Please download from https://drive.google.com/file/d/1topMf4xqLpbhI1X6fs3hf8_M1ytieLqP/view?usp=sharing, we remove the damaged images in original NICO and rename the images. The construction details of our proposed subset are in our Appendix.
+- NICO: Please download from https://drive.google.com/drive/folders/17-jl0fF9BxZupG75BtpOqJaB6dJ2Pv8O?usp=sharing, we remove the damaged images in original NICO and rename the images. The construction details of our proposed subset are in our Appendix.
 - ImageNet9: Please follow the usual practice to download the ImageNet (ILSVRC2015) dataset.
 
 3) Please remember to change the data path in the config file.
